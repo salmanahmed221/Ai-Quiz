@@ -6,12 +6,12 @@ import { z } from "zod";
 
 export const generateQuizTitle = async (file: string) => {
   const result = await generateObject({
-    model: google("gemini-2.0-flash"),
+    model: google("gemini-3.6-flash"),
     schema: z.object({
       title: z
         .string()
         .describe(
-          "A max three word title for the quiz based on the file provided as context"
+          "A max three word title for the quiz based on the file provided as context",
         ),
     }),
     prompt:
